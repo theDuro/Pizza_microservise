@@ -22,15 +22,19 @@ public class Bill implements Serializable {
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     @Column(name = "bill_id", nullable = false)
     private Long bill_id;
+    @Column(name = "customer_name")
+    private String customerName;
+    //JSON list of Produckts
+     @Column(name = "produckts")
+    private String produckts;
 
-    @Type(type = "json",typeClass = JsonType.class)
-    @Column(columnDefinition = "jsonb")
-    private List<String> tags;
-
-}
-
-
-
-
+     @Column(name = "cost")
+     private double cost;
 
 }
+
+
+
+
+
+
