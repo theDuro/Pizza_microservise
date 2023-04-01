@@ -29,5 +29,8 @@ public class User implements Serializable {
     @Column(name = "born_date")
     private Date bornDate;
 
+    @Column(name ="email")
+    private String email;
+
 
 }
