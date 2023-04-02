@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 import pl.edu.pwsztar.domain.dto.BillDto;
+import pl.edu.pwsztar.domain.repository.BillRepository;
 
 import java.util.List;
 
@@ -19,9 +20,8 @@ public class Controler {
     public ResponseEntity<List<BillDto>> getBills() {
         //LOGGER.info("find all comands");
 
-
         return new ResponseEntity<>( HttpStatus.OK);
-        //shoud return list off bills
+
 
     }
 }

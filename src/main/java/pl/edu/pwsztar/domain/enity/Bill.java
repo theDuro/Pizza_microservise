@@ -30,6 +30,8 @@ public class Bill implements Serializable {
 
      @Column(name = "cost")
      private double cost;
+    @ManyToOne
+    private User user;
 
 }
 

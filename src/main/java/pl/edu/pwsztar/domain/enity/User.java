@@ -1,5 +1,6 @@
 package pl.edu.pwsztar.domain.enity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -7,7 +8,7 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.Date;
+import java.util.*;
 
 @Entity
 @AllArgsConstructor
@@ -24,6 +25,7 @@ public class User implements Serializable {
     private String login;
 
     @Column(name = "password")
+    @JsonIgnore
     private String password;
 
     @Column(name = "born_date")
@@ -32,5 +34,8 @@ public class User implements Serializable {
     @Column(name ="email")
     private String email;
 
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+    @JsonIgnore
+    private Set<Bill> bills = new HashSet<>();
 
 }
