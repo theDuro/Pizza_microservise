@@ -20,8 +20,10 @@ public class Bill implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    @Column(name = "bill_id", nullable = false)
-    private Long bill_id;
+    @Column(name = "id", nullable = false)
+    private Long id;
+    @Column(name = "user_id")
+    private long userId;
     @Column(name = "customer_name")
     private String customerName;
     //JSON list of Produckts
