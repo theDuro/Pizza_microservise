@@ -24,9 +24,15 @@ private final UserServiceimp userService;
     @CrossOrigin
     @GetMapping(value = "/bills", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
     public ResponseEntity<List<BillDto>> getBills() {
-
-
         return new ResponseEntity<>(userService.getAllBills() ,HttpStatus.OK);
+    }
+
+    @CrossOrigin
+    @GetMapping(value = "/test", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+    public ResponseEntity<String> test() {
+
+
+        return new ResponseEntity<>("test" ,HttpStatus.OK);
 
 
     }

@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import pl.edu.pwsztar.domain.dto.BillDto;
 import pl.edu.pwsztar.domain.dto.LoginDto;
+import pl.edu.pwsztar.domain.enity.Bill;
 import pl.edu.pwsztar.domain.mappers.BillToBillDto;
 import pl.edu.pwsztar.domain.repository.BillRepository;
 
@@ -21,6 +22,8 @@ public class UserServiceimp implements UserService{
 
     @Override
     public List<BillDto> getAllBills() {
+    List<Bill> billList = billRepository.findAll();
+    int a =1;
         return billRepository.findAll()
                 .stream()
                 .map(billToBillDto::toBillDto)

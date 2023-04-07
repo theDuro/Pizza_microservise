@@ -1,5 +1,6 @@
 package pl.edu.pwsztar.domain.enity;
 
+import com.google.gson.Gson;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -27,13 +28,13 @@ public class Bill implements Serializable {
     @Column(name = "customer_name")
     private String customerName;
     //JSON list of Produckts
-     @Column(name = "produckts")
+     @Column(name = "products")
     private String produckts;
 
      @Column(name = "cost")
      private double cost;
-    @ManyToOne
-    private User user;
+    //@ManyToOne
+   // private User user;
 
 }
 

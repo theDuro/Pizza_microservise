@@ -6,6 +6,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.*;
@@ -16,7 +17,7 @@ import java.util.*;
 @Getter
 @NoArgsConstructor
 @Table(name = "user")
-public class User implements Serializable {
+public class User implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "user_id")
@@ -34,8 +35,8 @@ public class User implements Serializable {
     @Column(name ="email")
     private String email;
 
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
-    @JsonIgnore
-    private Set<Bill> bills = new HashSet<>();
+   // @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+    //@JsonIgnore
+   // private Set<Bill> bills = new HashSet<>();
 
 }
