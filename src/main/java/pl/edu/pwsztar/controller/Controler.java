@@ -7,6 +7,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
+import pl.edu.pwsztar.apiconection.dto.OrderApiClient;
 import pl.edu.pwsztar.domain.dto.BillDto;
 import pl.edu.pwsztar.service.UserService;
 import pl.edu.pwsztar.service.UserServiceimp;
@@ -32,7 +33,7 @@ private final UserServiceimp userService;
     public ResponseEntity<String> test() {
 
 
-        return new ResponseEntity<>("test" ,HttpStatus.OK);
+        return new ResponseEntity<>(OrderApiClient.makeRequest("http://localhost:9090/Test"),HttpStatus.OK);
 
 
     }
