@@ -11,7 +11,6 @@ import lombok.Setter;
 @NoArgsConstructor
 public class BillDto {
     private long userId;
-    private String customerName;
     private String produckts;
     //json -> list off produckts
     private double cost;

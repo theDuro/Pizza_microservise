@@ -7,9 +7,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
-import pl.edu.pwsztar.apiconection.dto.OrderApiClient;
 import pl.edu.pwsztar.domain.dto.BillDto;
-import pl.edu.pwsztar.service.UserService;
 import pl.edu.pwsztar.service.UserServiceimp;
 
 import java.util.List;
@@ -21,20 +19,19 @@ private final UserServiceimp userService;
     public Controler(UserServiceimp userService) {
         this.userService = userService;
     }
-
     @CrossOrigin
     @GetMapping(value = "/bills", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
     public ResponseEntity<List<BillDto>> getBills() {
         return new ResponseEntity<>(userService.getAllBills() ,HttpStatus.OK);
     }
-
     @CrossOrigin
     @GetMapping(value = "/test", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
     public ResponseEntity<String> test() {
-
-
-        return new ResponseEntity<>(OrderApiClient.makeRequest("http://localhost:9090/Test"),HttpStatus.OK);
-
-
+        return new ResponseEntity<>("OK",HttpStatus.OK);
+    }
+    @CrossOrigin
+    @GetMapping(value = "/getBill", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+    public ResponseEntity<String> getBill() {
+        return new ResponseEntity<>("OK",HttpStatus.OK);
     }
 }
